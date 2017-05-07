@@ -4,7 +4,7 @@
       <h1>
         <router-link class="img-wrap" to="/">
           <img src="./assets/logo.png" alt="">
-          <strong>Asiainfo start-kit</strong>
+          <!-- <strong>Asiainfo start-kit</strong> -->
         </router-link>
       </h1>
     </header>

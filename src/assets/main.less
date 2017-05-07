@@ -37,7 +37,7 @@ html,body{
     text-decoration: none;
     display: block;
     line-height: 60px;
-    transition: border .5s ease-in-out;
+    transition: border-width .5s ease-in-out;
     &:hover{
       border-left: 13px solid #41B883;
     }
@@ -59,9 +59,10 @@ header{
   color: #f0f0f0;
   text-align: left;
   position: fixed;
-  z-index: 2;top: 0;left: 0;
+  z-index: 5;top: 0;left: 0;
   width: 100%;
   border-bottom:1px solid #2C3E50;
+
   .img-wrap{
     display: inline-block;
     // width: 200px;
@@ -79,5 +80,31 @@ header{
   img{
     width: 50px;
     vertical-align: middle;
+  }
+}
+// selection
+.ai-selection{
+  height: 36px;
+  line-height: 36px;
+  width: 180px;
+  border:1px solid #ddd;
+  .select-box{
+    overflow: hidden;
+    position: relative;
+  }
+  .ai-select-value{
+    width: 130px;
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
+    padding: 0 10px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow:ellipsis;
+  }
+  .icon-arrow-right{
+    float: right;
+    position: absolute;
+    right:10px;top: 0;bottom: 0;
   }
 }

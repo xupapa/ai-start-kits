@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '../pages/Index'
+import Counter from '../pages/Counter'
+
 import Home from '../components/Home'
+
 Vue.use(Router)
 
 export default new Router({
@@ -14,6 +17,10 @@ export default new Router({
     {
       path: '/home',
       component: Home
+    },
+    {
+      path: '/counter',
+      component: Counter
     }
   ]
 })

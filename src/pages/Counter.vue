@@ -2,8 +2,8 @@
   <div class="ai-counter">
     <div class="ai-counter-wrap">
       <input type="text" class="ai-counter-input" v-model="num1" placeholder="text something">
-      <span class="ai-counter-decrease" @click="decreament">-</span>
-      <span class="ai-counter-increase" @click="increament">+</span>
+      <span class="ai-counter-decrease">-</span>
+      <span class="ai-counter-increase">+</span>
     </div>
   </div>
 </template>
@@ -15,29 +15,13 @@
 <script>
 import '../assets/counter.less'
 export default {
-  props:{
-    minX:{
-      type:Number,
-      default:1
-    }
-  },
   data () {
     return {
-      num1: this.minX
-    }
-  },
-  watch: {
-    num1(){
-
+      num1: 1
     }
   },
   methods: {
-    increament(){
-      this.num1++
-    },
-    decreament(){
-      this.num1--
-    }
+
   },
   computed: {
 

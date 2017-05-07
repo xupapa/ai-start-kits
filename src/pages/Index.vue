@@ -1,92 +1,55 @@
 <template>
     <div class="slide-wrap">
-      <slide></slide>
+      <slide :list="list"></slide>
+      <div class="mt20">
+        <counter :minX=2></counter>
+      </div>
+      <div class="mt20">
+        <ai-selection></ai-selection>
+      </div>
     </div>
 </template>
 <style lang="less">
+  .mt20{
+    margin-top: 20px;
+  }
   .slide-wrap{
     padding-top: 20px;
     text-align: center;
     margin: 0 auto;
   }
-  .slide-swiper{
-    max-width: 600px;
-    img{
-      width: 100%;
-    }
-  }
-  .slide-photo{
-    li{
-      position: relative;
-      height: 240px;
-    }
-    a{
-      display: block;
-      color: #42b983;
-      font-size: 30px;
-      text-decoration: none;
-    }
-    strong{
-      position: absolute;
-      bottom: 10px;
-      height: 40px;
-      display: block;
-      line-height: 40px;
-      background: rgba(0, 0, 0, .6);
-      width: 100%;
-      left: 0;
-    }
-  }
-  .slide-swiper{
-    margin: 0 auto;
-  }
+
 </style>
 <script>
 import slide from '../components/slideShow'
+import counter from '../components/Counter'
+import aiSelection from '../components/selection'
   export default {
-    components: {
-      slide
-    },
     data() {
       return {
-        productList: {
-          pc: {
-            title: 'pc列表',
-            list: [
-              {
-                name: 'pc列表1',
-                url: 'ddd'
-              },
-              {
-                name: 'pc列表2',
-                url: 'ddd'
-              },
-              {
-                name: 'pc列表3',
-                url: 'ddd'
-              },
-            ]
-          },
-          app: {
-            title: 'app列表',
-            list: [
-              {
-                name: 'app列表1',
-                url: 'ddd'
-              },
-              {
-                name: 'app列表1',
-                url: 'ddd'
-              },
-              {
-                name: 'app列表1',
-                url: 'ddd'
-              },
-            ]
-          }
-        }
+        list: [
+        ]
       }
+    },
+    created(){
+      this.$http.get('/api/getSlides')
+      .then(
+        (data) => {
+          console.log(data)
+          this.list = data.data
+        },
+        (err) => {
+          console.log(err)
+        }
+      )
+    },
+    components: {
+      //需要被注册的组件
+      slide,
+      counter,
+      aiSelection
     }
+
 
   }
 </script>

@@ -2,7 +2,9 @@
   <div class="sidebar">
     <ul>
        <li v-for="item in linkname">
-         <a :href="item.url" >{{ item.title }}</a>
+
+         <a :href="item.url">{{ item.title }}</a>
+
        </li>
     </ul>
   </div>
@@ -13,7 +15,7 @@
       this.$http.get('api/getBordList')
       .then(
         (data)=>{
-          console.log(data)
+          // console.log(data)
           this.linkname = data.body
         },
         (err)=>{
@@ -24,6 +26,16 @@
     data(){
       return {
         linkname: []
+      }
+    },
+    methods:{
+      links(item){
+        console.log(this.$route.path.substring(1) === item.url)
+      }
+    },
+    computed: {
+      linkActive(item){
+        this.$route.path.substring(1) === item.url
       }
     }
   }
