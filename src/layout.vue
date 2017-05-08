@@ -5,8 +5,12 @@
     </keep-alive>
   </div>
 </template>
+<style lang="less">
+
+
+</style>
 <script>
-import './widget/flexible'
+
   export default {
     data() {
       return {}

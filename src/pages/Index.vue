@@ -5,6 +5,14 @@
     </div>
 </template>
 <style lang="less">
+// less配置文件
+@import '../assets/config.less';
+
+.index{
+  .width(750);
+  .fs(30);
+}
+
 </style>
 <script>
   export default {
