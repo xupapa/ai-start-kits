@@ -5,7 +5,7 @@ import Layout from './layout'
 import router from './router'
 import VueResource from 'vue-resource'
 
-import './assets/main.less'
+import './assets/less/main.less'
 
 Vue.use(VueResource)
 Vue.config.productionTip = false

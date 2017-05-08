@@ -6,7 +6,7 @@
 </template>
 <style lang="less">
 // less配置文件
-@import '../assets/config.less';
+@import '../assets/less/config.less';
 
 .index{
   .width(750);
